@@ -56,6 +56,9 @@ function App() {
       }
     }
   }
+  const searchWeather = () => {
+
+  }
 
 
   useEffect(() => {
@@ -68,8 +71,11 @@ function App() {
     <div className="weather-wrapper">
 
       <div className="header">
-        <h2>Введіть місто</h2>
-        <input type="text" value={value} onChange={(e)=>setValue(e.target.value)} onKeyDown={getWeather}/>
+          <h2>Введіть місто</h2>
+          <button className="search-button" onClick={(e)=>getWeather({key: "Enter", target: {value}})}>Шукати</button>
+          <input type="text" value={value}
+            onChange={(e) => setValue(e.target.value)}
+            onKeyDown={getWeather} />
       </div>
 
       {loading && <div className="loading">Завантаження...</div>}
